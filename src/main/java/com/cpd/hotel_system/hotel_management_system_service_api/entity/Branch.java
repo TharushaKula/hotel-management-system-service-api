@@ -23,7 +23,7 @@ public class Branch {
     @Column(name = "branch_name", nullable = false)
     private String branchName;
 
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "hotel_id")
     private Hotel hotel;
 
