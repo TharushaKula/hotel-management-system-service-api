@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 public class Hotel {
 
     @Id
-    @Column(name = "hotel_id")
+    @Column(name = "hotel_id", length = 80)
     private String hotel_id;
 
     @Column(name = "hotel_name")
