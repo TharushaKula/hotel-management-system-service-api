@@ -1,11 +1,16 @@
 package com.cpd.hotel_system.hotel_management_system_service_api.util;
 
-public class ByteCodeHandler {
-    public static byte[] toByteArray(String string) {
-        return string.getBytes();
-    }
+import java.sql.Blob;
+import java.nio.charset.StandardCharsets;
+import java.sql.SQLException;
+import javax.sql.rowset.serial.SerialBlob;
 
-    public static String toString(byte[] byteArray) {
-        return new String(byteArray);
+import org.springframework.stereotype.Service;
+
+@Service
+public class ByteCodeHandler {
+    public Blob stringToBlob(String data) throws SQLException {
+        byte[] bytes = data.getBytes(StandardCharsets.UTF_8);
+        return new SerialBlob(bytes);
     }
 }
